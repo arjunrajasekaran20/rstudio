@@ -1,0 +1,159 @@
+Exp1)
+
+Mean Median Mode ungrouped data
+
+age=c(18,rep(19,4),rep(20,5),rep(21,4)22,23,24,27,30,36)
+mean(age)
+median(age)
+
+MEDIAN AGE UNDER 25
+MEDIAN(AGE[AGE>25])
+
+Xr=table(age)
+mode=which(xr==max(xr))
+mode
+
+-----------------------------------------------------------------
+mean median mode grouped data
+
+x=c(0,1,2,3)
+f=c(8,11,5,1)
+y=rep(x,f)
+
+mean=(sum(y))/(length(y))
+median(y)
+
+==================================================================
+Exp 2)
+Correlation and Regression
+
+ Karl Pearson’s method
+selection=c(44,49,52,54,47,76,65,60,63,58,50,67)
+proficiency=c(48,55,45,60,43,58,50,77,46,
+47,65)
+cor.test(selection,proficiency)
+
+-------------------------------------------------------
+Spearman’s method.
+statistics=c(55,40,70,60,62,73,65,65,20,35,46,50)
+computer=c(35,32,65,50,63,45,50,65,70,72,72,40)
+cor.test(statistics,computer,method= ”spearman”)
+------------------------------------------------------
+regression.
+> x=c(34,37,36,32,32,36,35,34,29,35)
+> y=c(37,37,34,34,33,40,39,37,36,35)
+> fit=lm(x~y)
+------------------------------------------------------
+multiple regression.
+> Y=c(110,80,70,120,150,90,70,120)
+> X1=c(30,40,20,50,60,40,20,60)
+> X2=c(11,10,7,15,19,12,8,14)
+> input_data=data.frame(Y,X1,X2)
+> fit=lm(Y~X1+X2)
+
+======================================================
+
+Exp3)
+Chi Squared Test
+
+> data<-matrix(c(35,42,61,48,51,68),ncol=3,byrow=1)
+> chisq.test(data)
+
+------------------------------------------------------
+F-Test
+
+> Unit_A=c(14.1, 10.1, 14.7,13.7,14.0)
+> Unit_B=c(14.0,14.5,13.7,12.7,14.1)
+> var.test(Unit_A, Unit_B)
+
+=====================================================
+
+Exp-4)
+T-test
+
+Effictiveness
+> before = c(12.9, 13.5, 12.8, 15.6, 17.2, 19.2, 12.6, 15.3, 14.4, 11.3)
+> after = c(12.7, 13.6, 12.0, 15.2, 16.8, 20.0, 12.0, 15.9, 16.0, 11.1)
+>t.test (before, after, paired=TRUE)
+---------------------------------------------------------
+Difference Average
+
+>x = c(15, 10, 13, 7, 9, 8, 21, 9, 14, 8)
+>y = c(15, 14, 12, 8, 14, 7, 16, 10, 15, 12)
+Syntax:
+>t.test(x,y,alt="less", var.equal=TRUE)
+
+---------------------------------------------------------
+Z-test
+Large Sample two sample
+HO: P1 = P2
+H1: P1 =P2
+Syntax: Prop.test(c(45,46), c(45+35,56+47))
+
+---------------------------------------------------------
+Large Sample one sample
+>pbar = 12/20
+>p0 = .5
+>n = 20
+Syntax:
+> z= (pbar-p0)/sqrt(p0+(1-p0)/n)
+
+==========================================================
+
+Exp-5)
+
+Anova
+
+> x=c(8,10,12,8,7,12,11,9,14,4,18,12,16,6,8,13,9,12,16,15)
+> schools=c(rep("a", 5), rep("b",5), rep("c",5), rep("d", 5))
+Syntax:
+> f=aov(x~schools)
+> summary (f)
+> anova (f)
+
+---------------------------------------------------------
+Binomial distribution
+
+To show that Binomial distribution variance is less than mean with Binomial variable follows (7,1/4),
+Data:
+> n=7
+> p=1/4
+Syntax:
+> x=dbinom(0:7,n,p)
+> X
+> Ex=sum(x*p)
+> Ex
+> var=sum((x-Ex)^2*x)
+var
+------------------------------------------------------------
+
+Poisson Distribution
+Aim:
+To check the relationship between mean and variance in Poisson distribution(4) with n=100.
+Data:
+> X.val=0:100
+Syntax:
+> P.val=dpois(X.val,4)
+> EX=sum(X.val*P.val)
+> EX
+> sum((X.val-EX)^2*P.val)
+
+------------------------------------------------------------
+Normal Distribution
+Aim:
+Draw another normal curve, use a mean=50 and a standard deviation=10.
+Data:
+>x=seq(20,80,length=200)
+>y=dnorm(x,mean=50,sd=10)
+Syntax:
+>plot(x,y,type="I")
+>x=seq(-3,3,length=200)
+>y=dnorm(x,mean=0,sd=1)
+>plot(x,y,type="I")
+>x=seq(-3,0,length=100)
+>y=dnorm(x,mean=0,sd=1)
+>polygon(c(-3,x,0),c(0,y,0),col="red")
+>pnorm(0,mean=0,sd=1)
+
+================================================================================================
+
